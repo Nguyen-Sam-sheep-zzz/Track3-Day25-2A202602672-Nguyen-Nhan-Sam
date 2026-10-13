@@ -1,0 +1,75 @@
+{
+  "case": "normal",
+  "scenario": "G2_overload_storm",
+  "seed": 25,
+  "client_rng_seed": 1,
+  "client": {
+    "attempt_timeout_s": 8.0,
+    "max_attempts_per_provider": 2,
+    "min_time_left_s": 1.0,
+    "backoff_base_s": 0.25,
+    "backoff_cap_s": 4.0,
+    "retry_budget_ratio": 0.1,
+    "retry_budget_min_per_s": 0.5,
+    "retry_budget_max_tokens": 20,
+    "quota_cooldown_s": 300,
+    "breaker": {
+      "window_size": 20,
+      "min_calls": 10,
+      "failure_rate_threshold": 0.5,
+      "slow_call_s": 5.0,
+      "slow_rate_threshold": 0.6,
+      "open_duration_s": 10.0,
+      "half_open_max_probes": 2,
+      "half_open_successes": 2
+    }
+  },
+  "cache": {
+    "similarity_threshold": 0.92,
+    "ttl_s": 60,
+    "max_stale_s": 300,
+    "max_entries": 500
+  },
+  "metrics": {
+    "scenario": "G2_overload_storm",
+    "client": "resilient",
+    "turns": 2362,
+    "good_turns": 2362,
+    "availability": 1.0,
+    "latency_p50_s": 3.06,
+    "latency_p95_s": 11.911,
+    "latency_p99_s": 16.81,
+    "calls": 4724,
+    "attempts": 5001,
+    "amplification": 1.059,
+    "retry_ratio": 0.008,
+    "attempts_by_provider": {
+      "alpha": 3565,
+      "alpha-eu": 971,
+      "beta": 459,
+      "gamma-mini": 6
+    },
+    "errors_by_code": {
+      "api_error": 12,
+      "client_timeout": 190,
+      "rate_limit_exceeded": 49,
+      "overloaded_error": 26
+    },
+    "give_up_reasons": {},
+    "cost": 5103.6,
+    "cost_per_good_turn": 2.161,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 1.0
+  },
+  "checks": {
+    "availability_min": true,
+    "amplification_max": true,
+    "recovery_s_max": true,
+    "primary_share_after_restore_min": true
+  },
+  "pass": true
+}

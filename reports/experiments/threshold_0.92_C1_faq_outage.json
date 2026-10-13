@@ -1,0 +1,82 @@
+{
+  "case": "threshold_0.92",
+  "scenario": "C1_faq_outage",
+  "seed": 25,
+  "client_rng_seed": 1,
+  "client": {
+    "attempt_timeout_s": 8.0,
+    "max_attempts_per_provider": 2,
+    "min_time_left_s": 1.0,
+    "backoff_base_s": 0.25,
+    "backoff_cap_s": 4.0,
+    "retry_budget_ratio": 0.1,
+    "retry_budget_min_per_s": 0.5,
+    "retry_budget_max_tokens": 20,
+    "quota_cooldown_s": 300,
+    "breaker": {
+      "window_size": 20,
+      "min_calls": 10,
+      "failure_rate_threshold": 0.5,
+      "slow_call_s": 5.0,
+      "slow_rate_threshold": 0.6,
+      "open_duration_s": 10.0,
+      "half_open_max_probes": 2,
+      "half_open_successes": 2
+    }
+  },
+  "cache": {
+    "similarity_threshold": 0.92,
+    "ttl_s": 60,
+    "max_stale_s": 300,
+    "max_entries": 500
+  },
+  "metrics": {
+    "scenario": "C1_faq_outage",
+    "client": "cached",
+    "turns": 2808,
+    "good_turns": 2562,
+    "availability": 0.9124,
+    "latency_p50_s": 1.026,
+    "latency_p95_s": 3.643,
+    "latency_p99_s": 4.492,
+    "calls": 3711,
+    "attempts": 2447,
+    "amplification": 0.659,
+    "retry_ratio": 0.007,
+    "attempts_by_provider": {
+      "alpha": 2365,
+      "alpha-eu": 29,
+      "beta": 30,
+      "gamma-mini": 23
+    },
+    "errors_by_code": {
+      "api_error": 4,
+      "service_unavailable": 100
+    },
+    "give_up_reasons": {
+      "no_provider_available": 246
+    },
+    "cost": 2345.4,
+    "cost_per_good_turn": 0.915,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 1.0,
+    "faq_turns": 1720,
+    "faq_availability": 0.9645,
+    "cache_hit_ratio": 0.652,
+    "stale_served": 157,
+    "wrong_answers": 0,
+    "wrong_answers_by_reason": {},
+    "outdated_answers": 3
+  },
+  "checks": {
+    "wrong_answers_max": true,
+    "outdated_answers_max": true,
+    "faq_availability_min": true,
+    "cache_hit_ratio_min": true
+  },
+  "pass": true
+}

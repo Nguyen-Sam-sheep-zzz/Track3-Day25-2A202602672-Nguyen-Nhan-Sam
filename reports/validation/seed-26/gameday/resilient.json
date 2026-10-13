@@ -1,0 +1,247 @@
+{
+  "G1_rate_limit_spike": {
+    "scenario": "G1_rate_limit_spike",
+    "client": "resilient",
+    "turns": 2976,
+    "good_turns": 2976,
+    "availability": 1.0,
+    "latency_p50_s": 3.058,
+    "latency_p95_s": 4.719,
+    "latency_p99_s": 5.721,
+    "calls": 5952,
+    "attempts": 6332,
+    "amplification": 1.064,
+    "retry_ratio": 0.003,
+    "attempts_by_provider": {
+      "alpha": 4062,
+      "alpha-eu": 1504,
+      "beta": 754,
+      "gamma-mini": 12
+    },
+    "errors_by_code": {
+      "api_error": 16,
+      "rate_limit_exceeded": 364
+    },
+    "give_up_reasons": {},
+    "cost": 6257.6,
+    "cost_per_good_turn": 2.103,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 0.944,
+    "checks": {
+      "availability_min": true,
+      "retry_after_violations_max": true,
+      "amplification_max": true
+    },
+    "pass": true,
+    "runtime_s": 0.15
+  },
+  "G2_overload_storm": {
+    "scenario": "G2_overload_storm",
+    "client": "resilient",
+    "turns": 2395,
+    "good_turns": 2395,
+    "availability": 1.0,
+    "latency_p50_s": 3.023,
+    "latency_p95_s": 11.421,
+    "latency_p99_s": 16.765,
+    "calls": 4790,
+    "attempts": 5019,
+    "amplification": 1.048,
+    "retry_ratio": 0.005,
+    "attempts_by_provider": {
+      "alpha": 3567,
+      "alpha-eu": 987,
+      "beta": 456,
+      "gamma-mini": 9
+    },
+    "errors_by_code": {
+      "api_error": 6,
+      "client_timeout": 161,
+      "overloaded_error": 4,
+      "rate_limit_exceeded": 58
+    },
+    "give_up_reasons": {},
+    "cost": 5130.6,
+    "cost_per_good_turn": 2.142,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 1.0,
+    "checks": {
+      "availability_min": true,
+      "amplification_max": true,
+      "recovery_s_max": true,
+      "primary_share_after_restore_min": true
+    },
+    "pass": true,
+    "runtime_s": 0.11
+  },
+  "G3_brownout": {
+    "scenario": "G3_brownout",
+    "client": "resilient",
+    "turns": 1950,
+    "good_turns": 1950,
+    "availability": 1.0,
+    "latency_p50_s": 2.99,
+    "latency_p95_s": 4.602,
+    "latency_p99_s": 5.546,
+    "calls": 3900,
+    "attempts": 4128,
+    "amplification": 1.058,
+    "retry_ratio": 0.033,
+    "attempts_by_provider": {
+      "alpha": 2976,
+      "alpha-eu": 973,
+      "beta": 179
+    },
+    "errors_by_code": {
+      "api_error": 204,
+      "rate_limit_exceeded": 24
+    },
+    "give_up_reasons": {},
+    "cost": 4175.6,
+    "cost_per_good_turn": 2.141,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 1.0,
+    "checks": {
+      "availability_min": true,
+      "retry_ratio_max": true,
+      "amplification_max": true
+    },
+    "pass": true,
+    "runtime_s": 0.09
+  },
+  "G4_slow_region": {
+    "scenario": "G4_slow_region",
+    "client": "resilient",
+    "turns": 2177,
+    "good_turns": 2177,
+    "availability": 1.0,
+    "latency_p50_s": 3.196,
+    "latency_p95_s": 5.663,
+    "latency_p99_s": 8.661,
+    "calls": 4354,
+    "attempts": 4418,
+    "amplification": 1.015,
+    "retry_ratio": 0.001,
+    "attempts_by_provider": {
+      "alpha": 1973,
+      "alpha-eu": 2049,
+      "beta": 396
+    },
+    "errors_by_code": {
+      "api_error": 6,
+      "rate_limit_exceeded": 58
+    },
+    "give_up_reasons": {},
+    "cost": 4518.4,
+    "cost_per_good_turn": 2.076,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 0.97,
+    "checks": {
+      "availability_min": true,
+      "latency_p95_s_max": true,
+      "primary_share_after_restore_min": true
+    },
+    "pass": true,
+    "runtime_s": 0.1
+  },
+  "G5_bad_deploy_then_quota": {
+    "scenario": "G5_bad_deploy_then_quota",
+    "client": "resilient",
+    "turns": 2130,
+    "good_turns": 1708,
+    "availability": 0.8019,
+    "latency_p50_s": 3.414,
+    "latency_p95_s": 5.507,
+    "latency_p99_s": 6.495,
+    "calls": 3946,
+    "attempts": 3953,
+    "amplification": 1.002,
+    "retry_ratio": 0.001,
+    "attempts_by_provider": {
+      "alpha": 2012,
+      "alpha-eu": 2,
+      "beta": 1939
+    },
+    "errors_by_code": {
+      "invalid_request_error": 422,
+      "insufficient_quota": 3,
+      "api_error": 4
+    },
+    "give_up_reasons": {
+      "client_error": 422
+    },
+    "cost": 4303.6,
+    "cost_per_good_turn": 2.52,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": null,
+    "primary_share_after_restore": null,
+    "checks": {
+      "client_error_retries_max": true,
+      "unneeded_failovers_max": true,
+      "availability_min": true
+    },
+    "pass": true,
+    "runtime_s": 0.09
+  },
+  "G6_provider_outage": {
+    "scenario": "G6_provider_outage",
+    "client": "resilient",
+    "turns": 2421,
+    "good_turns": 2421,
+    "availability": 1.0,
+    "latency_p50_s": 3.16,
+    "latency_p95_s": 6.365,
+    "latency_p99_s": 12.537,
+    "calls": 4842,
+    "attempts": 5151,
+    "amplification": 1.064,
+    "retry_ratio": 0.022,
+    "attempts_by_provider": {
+      "alpha": 2455,
+      "alpha-eu": 94,
+      "beta": 2154,
+      "gamma-mini": 448
+    },
+    "errors_by_code": {
+      "api_error": 6,
+      "service_unavailable": 57,
+      "client_timeout": 94,
+      "rate_limit_exceeded": 152
+    },
+    "give_up_reasons": {},
+    "cost": 5290.4,
+    "cost_per_good_turn": 2.185,
+    "retry_after_violations": 0,
+    "client_error_retries": 0,
+    "incompatible_routes": 0,
+    "unneeded_failovers": 0,
+    "recovery_s": 0.0,
+    "primary_share_after_restore": 1.0,
+    "checks": {
+      "availability_min": true,
+      "incompatible_routes_max": true,
+      "primary_share_after_restore_min": true
+    },
+    "pass": true,
+    "runtime_s": 0.12
+  }
+}
